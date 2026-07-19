@@ -38,8 +38,8 @@ export default function Services() {
             Quatre disciplines, un même objectif.
           </h1>
           <p className="mt-5 text-ink-soft leading-relaxed">
-            Simplifier des activités réelles — humaines, opérationnelles,
-            décisionnelles — avec des systèmes conçus pour durer.
+            Simplifier des activités réelles humaines, opérationnelles,
+            décisionnelles avec des systèmes conçus pour durer.
           </p>
         </Reveal>
 
