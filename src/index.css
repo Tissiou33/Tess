@@ -28,6 +28,27 @@
   .container-px {
     @apply px-6 md:px-10;
   }
+
+  .project-logo-spin-y {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    animation: projectLogoSpinY 11s linear infinite;
+  }
+
+}
+
+@keyframes projectLogoSpinY {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  54.55% {
+    transform: rotateY(360deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

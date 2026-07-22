@@ -1,25 +1,24 @@
-import { Lock, Recycle, Store } from 'lucide-react'
 import Reveal from '../components/Reveal.jsx'
 
 const PROJECTS = [
   {
     name: 'WasteLink',
     tag: 'Gestion des déchets',
-    icon: Recycle,
+    logo: '/projects/wastelink-logo.svg',
     status: 'En développement actif',
     text: "Une plateforme de gestion intelligente des ordures : suivi des collectes, capteurs connectés et optimisation des tournées, pour rendre la gestion des déchets plus efficace et plus visible.",
   },
   {
     name: 'ShopChap',
     tag: 'E-commerce',
-    icon: Store,
-    status: 'En développement actif',
+    logo: '/projects/LogoShopChap.png',
+    status: 'En phase de test',
     text: "Une vitrine clé en main pour les vendeurs en ligne : présenter ses produits, encaisser et gérer ses commandes, sans avoir à construire sa propre boutique de zéro.",
   },
   {
     name: 'AFIN',
     tag: 'À venir',
-    icon: Lock,
+    logo: '/projects/afin-logo.svg',
     status: 'Bientôt dévoilé',
     text: "Un projet encore en incubation chez Tesseract. Les détails arrivent — restez à l'écoute.",
     mystery: true,
@@ -42,7 +41,7 @@ export default function Projects() {
         </Reveal>
 
         <Reveal stagger className="mt-16 grid md:grid-cols-3 gap-6">
-          {PROJECTS.map(({ name, tag, icon: Icon, status, text, mystery }) => (
+          {PROJECTS.map(({ name, tag, logo, status, text, mystery }) => (
             <div
               key={name}
               className={`rounded-2xl border p-7 flex flex-col ${
@@ -50,8 +49,12 @@ export default function Projects() {
               }`}
             >
               <div className="flex items-center justify-between">
-                <div className="w-11 h-11 rounded-lg bg-accent-soft flex items-center justify-center text-accent">
-                  <Icon size={19} />
+                <div className="w-16 h-16 rounded-xl bg-accent-soft flex items-center justify-center text-accent">
+                  <img
+                    src={logo}
+                    alt={`Logo ${name}`}
+                    className="project-logo-spin-y h-12 w-12 object-contain"
+                  />
                 </div>
                 <span className="text-xs font-mono uppercase tracking-wide text-data">{tag}</span>
               </div>
@@ -65,7 +68,9 @@ export default function Projects() {
         </Reveal>
 
         <Reveal className="mt-6 text-sm text-ink-faint">
-          Logos et visuels de projets à venir — cette section évolue avec nos livraisons.
+          Restez à l'écoute, d'autres projets sont en incubation chez Tesseract. 
+          <br />
+          Nous sommes impatients de les partager avec vous.
         </Reveal>
       </div>
     </div>
