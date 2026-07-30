@@ -68,7 +68,14 @@ function rotate3D([x, y, z], ax, ay, az) {
   return [x3, y3, z2]
 }
 
-const COLORS = ['68,56,202', '14,165,160', '51,42,160'] // accent, data, accent-dark (en RGB)
+const COLORS = [
+  '230,106,31',  // orange
+  '86,184,112',  // vert clair
+  '23,21,19',    // noir
+  '59,130,246',  // bleu
+  '245,158,11',  // jaune
+  '168,85,247',  // violet
+]
 
 // ---------------------------------------------------------------------------
 // Figure flottante : dérive, rotation propre, naissance/disparition en fondu
@@ -209,7 +216,7 @@ export default function GeometryField({ className = '' }) {
         ctx.beginPath()
         ctx.moveTo(a[0], a[1])
         ctx.lineTo(b[0], b[1])
-        ctx.strokeStyle = `rgba(68, 56, 202, ${alpha.toFixed(3)})`
+        ctx.strokeStyle = `rgba(230, 106, 31, ${alpha.toFixed(3)})`
         ctx.lineWidth = 1.2
         ctx.stroke()
       })
@@ -217,7 +224,7 @@ export default function GeometryField({ className = '' }) {
         const r = 1.5 + ((z + 1.4) / 2.8) * 1.6
         ctx.beginPath()
         ctx.arc(x, y, r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(14, 165, 160, 0.55)'
+        ctx.fillStyle = 'rgba(86, 184, 112, 0.55)'
         ctx.fill()
       })
     }

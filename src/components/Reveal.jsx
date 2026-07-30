@@ -7,8 +7,9 @@ gsap.registerPlugin(ScrollTrigger)
 /**
  * Fait apparaître ses enfants (fade + translate) quand ils entrent dans le viewport.
  * `stagger` anime les enfants directs en cascade au lieu du bloc entier.
+ * `staggerStep` contrôle l'intervalle entre deux enfants.
  */
-export default function Reveal({ children, className = '', stagger = false, delay = 0, y = 28 }) {
+export default function Reveal({ children, className = '', stagger = false, delay = 0, y = 28, staggerStep = 0.12 }) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function Reveal({ children, className = '', stagger = false, dela
           duration: 0.9,
           delay,
           ease: 'power3.out',
-          stagger: stagger ? 0.12 : 0,
+          stagger: stagger ? staggerStep : 0,
           scrollTrigger: {
             trigger: el,
             start: 'top 85%',
@@ -37,7 +38,7 @@ export default function Reveal({ children, className = '', stagger = false, dela
     }, ref)
 
     return () => ctx.revert()
-  }, [stagger, delay, y])
+  }, [stagger, delay, y, staggerStep])
 
   return (
     <div ref={ref} className={className}>

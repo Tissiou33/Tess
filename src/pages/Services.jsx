@@ -1,17 +1,24 @@
 import { MessageSquare, ScanSearch, ShieldCheck, Truck } from 'lucide-react'
 import Reveal from '../components/Reveal.jsx'
+import FloatingShapesLayer from '../components/FloatingShapesLayer.jsx'
 
 const SERVICES = [
   {
     icon: MessageSquare,
+    title: 'Developpement dapplications web et mobile',
+    text: "Nous concevons des applications web et mobiles sur mesure, adaptées à vos besoins spécifiques. Que ce soit pour la gestion interne, le suivi des opérations ou l'engagement client, nous créons des solutions intuitives et performantes.",
+    points: ['Applications web et mobiles ', 'Intégration avec vos systèmes existants'],
+  },
+  {
+    icon: MessageSquare,
     title: 'Chatbots & agents IA',
-    text: "Nous concevons des assistants conversationnels capables de comprendre une demande, de la traiter et de la router — sur WhatsApp, sur votre site, ou en interne pour vos équipes. Du support client automatisé aux assistants métiers spécialisés (agriculture, santé, service public), chaque agent est entraîné sur vos propres données.",
-    points: ['Compréhension du langage naturel en français et langues locales', 'Déploiement sur vos canaux existants', 'Fonctionnement en local possible, sans dépendance à une API externe'],
+    text: "Nous concevons des assistants conversationnels capables de comprendre une demande, de la traiter et de la router sur WhatsApp, sur votre site, ou en interne pour vos équipes. Du support client automatisé aux assistants métiers spécialisés (agriculture, santé, service public), chaque agent est entraîné sur mesure selon vos besions",
+    points: ['Compréhension du langage naturel', 'Déploiement sur vos canaux existants', 'Fonctionnement en local possible, sans dépendance à une API externe'],
   },
   {
     icon: ScanSearch,
     title: 'Analyse massive de données imagées',
-    text: "Nous traitons de grands volumes d'images et de signaux — médicaux, satellites, industriels — pour en extraire des informations exploitables à l'échelle. De l'annotation semi-automatisée à la détection de motifs, nous construisons les pipelines qui transforment la donnée brute en décision.",
+    text: "Nous traitons de grands volumes d'images, données industriels pour en extraire des informations exploitables à l'échelle. Nous construisons les pipelines qui transforment la donnée brute en décision.",
     points: ['Pipelines de traitement à grande échelle', 'Annotation et classification semi-automatisées', "Adapté aux contraintes de connectivité et d'infrastructure locales"],
   },
   {
@@ -23,15 +30,16 @@ const SERVICES = [
   {
     icon: Truck,
     title: 'Systèmes & logistique',
-    text: "Nous développons des plateformes qui organisent les opérations de terrain — suivi, tournées, ressources — et les rendent visibles en temps réel pour la prise de décision.",
+    text: "Rendre toute chose accessible",
     points: ['Suivi et optimisation des opérations terrain', 'Tableaux de bord temps réel', 'Intégration avec capteurs et objets connectés'],
   },
 ]
 
 export default function Services() {
   return (
-    <div className="pt-40 pb-28">
-      <div className="max-w-content mx-auto container-px">
+    <div className="relative overflow-hidden pt-40 pb-28">
+      <FloatingShapesLayer className="absolute inset-0 z-0 h-full w-full pointer-events-none" />
+      <div className="relative z-10 max-w-content mx-auto container-px">
         <Reveal className="max-w-lg">
           <span className="eyebrow">Services</span>
           <h1 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
