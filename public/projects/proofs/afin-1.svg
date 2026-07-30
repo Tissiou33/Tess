@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Apercu AFIN 1">
+  <rect width="1200" height="800" fill="#111827"/>
+  <rect x="70" y="70" width="1060" height="660" rx="28" fill="#0b1220" stroke="#374151"/>
+  <text x="120" y="160" fill="#f8fafc" font-family="Arial, sans-serif" font-size="44" font-weight="700">AFIN</text>
+  <text x="120" y="214" fill="#94a3b8" font-family="Arial, sans-serif" font-size="28">Apercu du projet en incubation</text>
+  <rect x="120" y="290" width="960" height="360" rx="20" fill="#1f2937" stroke="#4b5563"/>
+</svg>

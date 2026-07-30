@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Linkedin, Twitter } from 'lucide-react'
 import Reveal from '../components/Reveal.jsx'
 import FloatingShapesLayer from '../components/FloatingShapesLayer.jsx'
+import { assetPath } from '../lib/url.js'
 
 // Pour ajouter une photo : dépose le fichier dans /public/team/ (ex. paul.jpg)
 // puis renseigne son chemin ici, ex. photo: '/team/paul.jpg'.
@@ -11,7 +12,7 @@ const TEAM = [
     name: 'Tchaa Wazam Paul ABI',
     role: 'Ingénieur IA',
     bio: "Conçoit et entraîne les modèles derrière nos agents conversationnels de la compréhension du langage à la mise en production.",
-    photo: '/team/PAUL.jpeg',
+    photo: assetPath('/team/PAUL.jpeg'),
     linkedin: 'https://www.linkedin.com/in/tchaa-wazam-paul-abi',
     twitter: 'https://x.com/tchaa_paul',
   },
@@ -28,7 +29,7 @@ const TEAM = [
     name: 'Awè Augustin KOURATE',
     role: 'Développeur',
     bio: "Transforme les architectures en produits concrets, robustes et prêts à passer à l'échelle.",
-    photo: '/team/Augustin.jpeg',
+    photo: assetPath('/team/Augustin.jpeg'),
     linkedin: 'https://www.linkedin.com/in/augustin-kourate',
     twitter: 'https://x.com/augustin_krt',
   },
@@ -36,7 +37,7 @@ const TEAM = [
     name: 'Olouwafémi Léonidas LOUTOU',
     role: 'Ingénieur Logistique',
     bio: "Structure les opérations terrain et les flux de données entre systèmes physiques et plateformes numériques.",
-    photo: '/team/leo.jpeg',
+    photo: assetPath('/team/leo.jpeg'),
     linkedin: 'https://www.linkedin.com/in/olouwafemi-leonidas-loutou',
     twitter: 'https://x.com/leonidas_loutou',
   },
@@ -45,7 +46,7 @@ const TEAM = [
     name: 'Tissiou Essowaza Salomon TOSSIM',
     role: 'Ingénieur IA & Big Data',
     bio: "Construit les pipelines qui transforment de gros volumes de données et d'images en informations exploitables.",
-    photo: '/team/photo-pass-Tissiou.jpg',
+    photo: assetPath('/team/photo-pass-Tissiou.jpg'),
     linkedin: 'https://www.linkedin.com/in/tissiou-essowaza-salomon-tossim',
     twitter: 'https://x.com/tissiou_salomon',
   },
