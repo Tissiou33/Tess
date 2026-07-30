@@ -22,12 +22,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled ? 'bg-bg/85 backdrop-blur-md border-b border-line' : 'bg-transparent'
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled ? 'header-glass border-b border-line/80 shadow-[0_10px_30px_-26px_rgba(23,21,19,0.48)]' : 'bg-transparent'
       }`}
     >
       <div className="max-w-content mx-auto container-px flex items-center justify-between h-20">
-        <NavLink to="/" className="font-display font-semibold text-lg tracking-tight">
+        <NavLink
+          to="/"
+          className="font-display text-lg font-semibold tracking-tight text-ink hover:text-accent-dark transition-colors"
+          aria-label="Tesseract"
+        >
           Tesseract
         </NavLink>
 
@@ -38,8 +42,8 @@ export default function Navbar() {
               to={link.to}
               end={link.to === '/'}
               className={({ isActive }) =>
-                `text-sm transition-colors ${
-                  isActive ? 'text-ink font-medium' : 'text-ink-soft hover:text-ink'
+                `nav-link-fx text-sm ${
+                  isActive ? 'nav-link-fx-active text-accent font-medium' : 'text-ink-soft hover:text-ink'
                 }`
               }
             >
@@ -50,7 +54,7 @@ export default function Navbar() {
 
         <NavLink
           to="/contact"
-          className="hidden md:inline-flex items-center rounded-full bg-ink text-bg text-sm font-medium px-5 py-2.5 hover:bg-accent transition-colors"
+          className="hidden md:inline-flex items-center rounded-full cta-primary-fx text-bg text-sm font-medium px-5 py-2.5"
         >
           Nous contacter
         </NavLink>

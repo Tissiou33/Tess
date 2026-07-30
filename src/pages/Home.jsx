@@ -1,18 +1,32 @@
+import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ArrowUpRight, MessageSquare, ScanSearch, ShieldCheck, Truck } from 'lucide-react'
 import Reveal from '../components/Reveal.jsx'
 import GeometryField from '../components/GeometryField.jsx'
+import FloatingShapesLayer from '../components/FloatingShapesLayer.jsx'
+
+const HERO_ROTATING_LINES = ['Une flexibilité inouïe', 'De meilleurs rendement', 'Un monde meilleur', 'une dimension à simplifier']
+const TYPE_SPEED_MS = 100
+const DELETE_SPEED_MS = 90
+const HOLD_AFTER_TYPE_MS = 1400
+const HOLD_AFTER_DELETE_MS = 320
 
 const SERVICES = [
+    {
+    icon: MessageSquare,
+    title: 'Developpement dapplications web et mobile',
+    text: "Applications web et mobiles intégré à vos systèmes existants",
+  },
+
   {
     icon: MessageSquare,
     title: 'Chatbots & agents IA',
-    text: "Des assistants conversationnels sur mesure qui répondent, orientent et automatisent — dans vos outils, sur votre site, ou en local.",
+    text: "Des assistants conversationnels sur mesure qui répondent, orientent et automatisent dans vos outils, sur votre site, ou en local.",
   },
   {
     icon: ScanSearch,
     title: 'Analyse massive de données imagées',
-    text: "Traitement et interprétation à grande échelle d'images et de signaux — pour transformer des volumes bruts en décisions exploitables.",
+    text: "Traitement et interprétation à grande échelle d'images pour transformer des volumes bruts en décisions exploitables.",
   },
   {
     icon: ShieldCheck,
@@ -33,27 +47,66 @@ const PROJECTS = [
 ]
 
 export default function Home() {
+  const [lineIndex, setLineIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  const activeLine = HERO_ROTATING_LINES[lineIndex]
+  const animatedLine = activeLine.slice(0, charIndex)
+
+  useEffect(() => {
+    const atLineEnd = !isDeleting && charIndex === activeLine.length
+    const atLineStart = isDeleting && charIndex === 0
+
+    let delay = isDeleting ? DELETE_SPEED_MS : TYPE_SPEED_MS
+    if (atLineEnd) delay = HOLD_AFTER_TYPE_MS
+    if (atLineStart) delay = HOLD_AFTER_DELETE_MS
+
+    const timeoutId = window.setTimeout(() => {
+      if (atLineEnd) {
+        setIsDeleting(true)
+        return
+      }
+
+      if (atLineStart) {
+        setIsDeleting(false)
+        setLineIndex((prev) => (prev + 1) % HERO_ROTATING_LINES.length)
+        return
+      }
+
+      setCharIndex((prev) => prev + (isDeleting ? -1 : 1))
+    }, delay)
+
+    return () => window.clearTimeout(timeoutId)
+  }, [activeLine, charIndex, isDeleting])
+
   return (
-    <>
+    <div className="relative overflow-hidden [&>section]:relative [&>section]:z-10">
+      <FloatingShapesLayer className="absolute inset-0 z-0 h-full w-full pointer-events-none" />
       {/* HERO */}
       <section className="relative pt-40 pb-28 md:pt-48 md:pb-36 overflow-hidden">
         <div className="max-w-content mx-auto container-px grid md:grid-cols-2 gap-14 items-center">
           <div>
             <Reveal>
-              <span className="eyebrow">Tesseract — solutions informatiques & IA</span>
+              <span className="eyebrow">Tesseract - solutions informatiques & IA</span>
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="mt-5 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
                 Chaque activité,
                 <br />
-                une dimension à simplifier.
+                <span>
+                  {animatedLine}
+                  <span className="inline-block ml-1 text-accent animate-pulse">|</span>
+                </span>
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-6 text-lg text-ink-soft leading-relaxed max-w-md">
-                Nous concevons des systèmes d'intelligence artificielle — chatbots,
-                analyse massive de données imagées — qui rendent le travail des
-                personnes et des entreprises plus simple.
+                Nous accompagnons les entreprises dans leurs processus de digitalisation et concevons des systèmes d'intelligence artificielle, chatbots,
+                analyse massive de données ... <br/> 
+                Notre ambition est de rendre le travail des
+                personnes et des entreprises plus simple et éfficace.
+    
               </p>
             </Reveal>
             <Reveal delay={0.24}>
@@ -175,6 +228,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   )
 }

@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx'
 import Services from './pages/Services.jsx'
 import Team from './pages/Team.jsx'
 import Projects from './pages/Projects.jsx'
+import ProjectOrbit from './pages/ProjectOrbit.jsx'
 import Blog from './pages/Blog.jsx'
 import Contact from './pages/Contact.jsx'
 
@@ -23,7 +24,7 @@ export default function App() {
   useLenis()
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="site-chrome min-h-screen flex flex-col">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1">
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/equipe" element={<Team />} />
           <Route path="/projets" element={<Projects />} />
+          <Route path="/projets/:slug" element={<ProjectOrbit />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

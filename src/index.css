@@ -8,6 +8,10 @@
   }
   body {
     @apply bg-bg text-ink font-body antialiased;
+    background-image:
+      radial-gradient(circle at 10% -10%, rgba(230, 106, 31, 0.18), transparent 34%),
+      radial-gradient(circle at 90% 0%, rgba(86, 184, 112, 0.14), transparent 38%),
+      radial-gradient(circle at 55% 110%, rgba(23, 21, 19, 0.08), transparent 40%);
   }
   h1, h2, h3, h4 {
     @apply font-display;
@@ -16,7 +20,7 @@
     @apply bg-accent-soft text-accent-dark;
   }
   :focus-visible {
-    outline: 2px solid #4438CA;
+    outline: 2px solid #E66A1F;
     outline-offset: 3px;
   }
 }
@@ -27,6 +31,181 @@
   }
   .container-px {
     @apply px-6 md:px-10;
+  }
+
+  .site-chrome {
+    background: linear-gradient(180deg, rgba(251, 250, 247, 0.66) 0%, rgba(241, 239, 234, 0.9) 26%, rgba(241, 239, 234, 1) 100%);
+  }
+
+  .header-glass {
+    background: linear-gradient(180deg, rgba(248, 245, 239, 0.95) 0%, rgba(241, 239, 234, 0.82) 100%);
+    backdrop-filter: saturate(1.15) blur(10px);
+  }
+
+  .nav-link-fx {
+    position: relative;
+    transition: color 220ms ease;
+  }
+
+  .nav-link-fx::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.42rem;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(230, 106, 31, 0.96);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 240ms ease;
+  }
+
+  .nav-link-fx:hover::after,
+  .nav-link-fx-active::after {
+    transform: scaleX(1);
+  }
+
+  .cta-primary-fx {
+    background: linear-gradient(135deg, #E66A1F 0%, #9C3E13 50%, #56B870 100%);
+    transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+    box-shadow: 0 14px 24px -16px rgba(23, 21, 19, 0.55);
+  }
+
+  .cta-primary-fx:hover {
+    transform: translateY(-1px);
+    filter: saturate(1.08);
+    box-shadow: 0 18px 30px -18px rgba(86, 184, 112, 0.75);
+  }
+
+  .project-orbit-stage {
+    position: relative;
+    width: min(96vw, 1720px);
+    min-height: min(94vh, 1360px);
+    overflow: visible;
+    padding: 2.6rem;
+  }
+
+  .project-orbit-ring {
+    position: relative;
+    min-height: min(88vh, 1220px);
+  }
+
+  .project-orbit-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(82%, 230px);
+    z-index: 5;
+    text-align: center;
+    padding: 1.4rem 1.1rem;
+    border-radius: 9999px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .orbit-node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%) rotate(var(--angle));
+    animation: orbitSpin var(--duration) linear infinite;
+  }
+
+  .orbit-link {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: var(--radius);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(86, 184, 112, 0.75) 0%, rgba(230, 106, 31, 0.7) 60%, rgba(23, 21, 19, 0.26) 100%);
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+
+  .orbit-card {
+    position: absolute;
+    left: var(--radius);
+    top: 50%;
+    width: clamp(160px, 16vw, 260px);
+    aspect-ratio: 16 / 10;
+    transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
+    animation: orbitCounter var(--duration) linear infinite;
+    overflow: hidden;
+  }
+
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--angle));
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--angle) + 360deg));
+  }
+}
+
+@keyframes orbitCounter {
+  from {
+    transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle) - 360deg));
+  }
+}
+
+@media (max-width: 900px) {
+  .project-orbit-stage {
+    width: min(98vw, 1120px);
+    min-height: 1300px;
+    padding: 1.5rem;
+  }
+
+  .project-orbit-ring {
+    min-height: 1200px;
+  }
+
+  .project-orbit-center {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    width: min(90%, 230px);
+  }
+
+  .orbit-node {
+    top: 58%;
+  }
+
+  .orbit-card {
+    width: clamp(140px, 30vw, 220px);
+  }
+}
+
+@media (max-width: 640px) {
+  .project-orbit-stage {
+    min-height: 1460px;
+  }
+
+  .project-orbit-ring {
+    min-height: 1360px;
+  }
+
+  .orbit-node {
+    top: 62%;
+  }
+
+  .orbit-card {
+    width: clamp(130px, 36vw, 180px);
   }
 }
 

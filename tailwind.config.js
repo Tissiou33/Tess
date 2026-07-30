@@ -4,16 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#F7F7F4',
-        surface: '#FFFFFF',
-        ink: '#14161B',
-        'ink-soft': '#5B5F68',
-        'ink-faint': '#9A9DA6',
-        accent: '#4438CA',
-        'accent-soft': '#EDEBFB',
-        'accent-dark': '#332AA0',
-        data: '#0EA5A0',
-        line: '#E4E3DE',
+        bg: '#F1EFEA',
+        surface: '#FBFAF7',
+        ink: '#171513',
+        'ink-soft': '#5E5A55',
+        'ink-faint': '#9B958E',
+        accent: '#E66A1F',
+        'accent-soft': '#FDE7D7',
+        'accent-dark': '#B44712',
+        data: '#56B870',
+        line: '#D8D1C8',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],

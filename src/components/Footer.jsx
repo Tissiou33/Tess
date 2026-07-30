@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { Linkedin, Twitter } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -10,6 +11,26 @@ export default function Footer() {
             Des solutions informatiques et des systèmes d'IA pensés pour faciliter
             les activités des personnes et des entreprises.
           </p>
+          <div className="mt-4 flex items-center gap-3">
+            <a
+              href="https://www.linkedin.com/company/tesseract-tg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn de Tesseract"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-soft hover:text-accent hover:border-accent/40 transition-colors"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href="https://x.com/tesseract_tg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Twitter de Tesseract"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-soft hover:text-accent hover:border-accent/40 transition-colors"
+            >
+              <Twitter size={16} />
+            </a>
+          </div>
         </div>
 
         <div>
