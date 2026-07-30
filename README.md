@@ -1,4 +1,4 @@
-# Tesseract — site vitrine
+# Tesseract site vitrine
 
 Site React + Vite avec smooth scroll (Lenis) et animations au scroll (GSAP ScrollTrigger),
 dans le même esprit que la fluidité observée sur ovaar.app.
