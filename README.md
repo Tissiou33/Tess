@@ -36,7 +36,7 @@ src/
 
 ## À faire avant mise en ligne
 
-1. **Logo** — remplacer le texte "Tesseract" dans `Navbar.jsx` et `Footer.jsx` par votre logo (SVG de préférence).
+1. **Logo** remplacer le texte "Tesseract" dans `Navbar.jsx` et `Footer.jsx` par votre logo (SVG de préférence).
 2. **Logos de projets** — dans `Projects.jsx`, remplacer les icônes Lucide (Recycle, Store, Lock)
    par vos vrais logos WasteLink / ShopChap / AFIN dès qu'ils sont prêts.
 3. **Photos d'équipe** — déposez les fichiers dans `public/team/` (ex. `paul.jpg`), puis dans
