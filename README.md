@@ -37,17 +37,17 @@ src/
 ## À faire avant mise en ligne
 
 1. **Logo** remplacer le texte "Tesseract" dans `Navbar.jsx` et `Footer.jsx` par votre logo (SVG de préférence).
-2. **Logos de projets** — dans `Projects.jsx`, remplacer les icônes Lucide (Recycle, Store, Lock)
+2. **Logos de projets** dans `Projects.jsx`, remplacer les icônes Lucide (Recycle, Store, Lock)
    par vos vrais logos WasteLink / ShopChap / AFIN dès qu'ils sont prêts.
-3. **Photos d'équipe** — déposez les fichiers dans `public/team/` (ex. `paul.jpg`), puis dans
+3. **Photos d'équipe** déposez les fichiers dans `public/team/` (ex. `paul.jpg`), puis dans
    `Team.jsx`, renseignez `photo: '/team/paul.jpg'` pour la personne concernée. Tant que `photo`
    reste `null`, la carte affiche l'initiale du prénom à la place — aucune casse visuelle en attendant.
-4. **Formulaire de contact** — `Contact.jsx` a un formulaire fonctionnel côté UI mais pas encore
+4. **Formulaire de contact** `Contact.jsx` a un formulaire fonctionnel côté UI mais pas encore
    connecté à un backend. Options rapides : EmailJS, Formspree, ou une fonction Firebase (cohérent
    avec le reste de votre stack).
 5. **Contenu** — les textes de `Services.jsx`, `Team.jsx` et `Projects.jsx` sont des premiers jets :
    à relire et ajuster avec vous.
-6. **Couleurs de marque** — si vous avez déjà une charte, les valeurs sont centralisées dans
+6. **Couleurs de marque** si vous avez déjà une charte, les valeurs sont centralisées dans
    `tailwind.config.js` (`accent`, `ink`, `bg`, `data`) : un seul endroit à modifier.
 
 ## L'animation du hero
