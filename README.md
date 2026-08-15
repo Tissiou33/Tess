@@ -53,7 +53,7 @@ src/
 ## L'animation du hero
 
 `GeometryField.jsx` fait vivre une petite scène géométrique :
-- un **tesseract** (hypercube 4D) reste fixe au centre, en rotation continue — l'ancrage visuel ;
+- un **tesseract** (hypercube 4D) reste fixe au centre, en rotation continue l'ancrage visuel ;
 - quelques figures plus petites (cube, octaèdre, tétraèdre) **dérivent et tournent** librement autour ;
 - quand deux figures se **percutent**, elles disparaissent en fondu et font naître une **troisième**
   figure (type aléatoire) à l'endroit de l'impact, accompagnée d'une petite explosion de particules ;
@@ -65,7 +65,7 @@ net à toutes les résolutions. `prefers-reduced-motion` désactive collisions e
 ## Notes techniques
 
 - L'animation du tesseract (`TesseractCanvas.jsx`) est un vrai calcul de projection 4D → 3D → 2D
-  sur `<canvas>`, pas une image ou un GIF — donc légère et redimensionnable sans perte.
+  sur `<canvas>`, pas une image ou un GIF donc légère et redimensionnable sans perte.
 - `prefers-reduced-motion` est respecté partout (smooth scroll et animations désactivés si l'utilisateur
   le demande dans son système).
 - Le smooth scroll (Lenis) est synchronisé avec GSAP ScrollTrigger via `gsap.ticker`, pour que les
